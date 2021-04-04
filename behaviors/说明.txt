@@ -1,0 +1,27 @@
+官方behaviors： 2020年8月10日
+8dir
+anchor
+bound
+bullet
+car
+custom
+destroy
+dragndrop
+fade
+flash
+jumpthru
+los
+nosave
+pathfinding
+persist
+physics
+pin
+platform
+rotate
+scorollto
+shadowcaster
+sin
+solid
+timer
+turret
+wrap

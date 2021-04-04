@@ -1,0 +1,116 @@
+* release_history.txt
+* Release history for the Scirra Construct 2 Photon Plugin 
+(C) 2018 Exit Games GmbH, http://www.photonengine.com
+
+*** Version 4-1-0-2 (24.07.2019 - rev555)
+	scirra:
+FIXED: minified Construct3 export
+
+*** Version 4-1-0-1 (14.09.2018 - rev552)
+	scirra:
+ADDED: C3 runtime support
+ADDED: photon plugin SetAppId, SetAppVersion and Reset (recreates loadbalancing client) actions
+ADDED: photon chat plugin SetAppId, SetAppVersion and Reset (recreates chat client) actions
+ADDED: Missing photon chat user status presets strings in UserStatusString expression
+ADDED: photon plugin "On disconnect" condition
+
+*** Version 4-1-0-0 (17.08.2018 - rev541)
+	scirra:
+CHANGED: "Join room" action RejoinActorNr parameter changed to boolean "Rejoin"
+CHANGED: "Set unique userid check" is deprecated
+ADDED: chat last message id support
+	loadbalancing:
+BREAKING boolean 'rejoin' option used instead 'rejoinToken' string in join options
+BREAKING: uniqueUserId option removed, room always created with CheckUserOnJoin = true
+CHANGED: EmptyRoomTtl and PlayerTtl are well known properties: updated on clients when they join, or some client sets them with setEptyRoomLiveTime() or setSuspendedPlayerLiveTime() while joined to a room
+
+*** Version 4-0-0-11 (18.04.2018 - rev531)
+	scirra:
+FIXED: preventing Photon global variables from renaming when minifying during export
+FIXED (BREAKING): EventCode expression return type changed from string to number
+	loadbalancing:
+FIXED: actor list could be broken after updating from JoinGame response (iterated over object properties instead if array elements)
+
+*** Version 4-0-0-10 (22.02.2018 - rev529)
+	scirra:
+CHANGED: Photon exceptions trigger OnError condition
+ADDED: AlertBlocker plugin preventing browser alerts from showing up
+	core:
+ADDED: Logger instance exception() method throwing an Error or calling global method set via static cLogger.setExceptionHandler
+CHANGED: all "throw new Error" replaced with Logger.exception() calls
+	loadbalancing:
+CHANGED: ParameterCode.Forward -> WebFlags
+CHANGED: webfForward property set via 0x1 flag instead of boolean
+ADDED: webRpc: options.sendAuthCookie parameter, if true, new ParameterCode.WebFlags parameter set to 0x2 (byte)
+	chat:
+ADDED: publishMessage, sendPrivateMessage: options.webForward. parameter, if true, new ParameterCode.WebFlags parameter set to 0x1 (byte)
+
+*** Version 4-0-0-9 (18.01.2018 - rev512)
+	scirra:
+ADDED: "Set hosting type" and "Set Self Hosted address" actions
+FIXED: myRoom.name and availableRooms[].name accessed via string key to avoid minification issues
+	loadbalancing:
+CHANGED: server error code and message added to authentication error info
+
+*** Version 4-0-0-8 (11.12.2017 - rev500)
+	scirra:
+ADDED: 'ru' and 'rue' regions
+CHANGED: photon library loaded as separate dependency file (FIXED: minifying project with Photon lib inlined broke lib variable names)
+
+*** Version 4-0-0-7 (26.03.2017 - rev495)
+	scirra:
+ADDED: Construct 3 Realtime and Chat plugins
+ADDED: 'cn' region
+CHANGED: Actions descriptions include all parameters
+CHANGED: All demos switched to wss (ws fails to connect when run from browser C3 editor)
+
+*** Version 4-0-0-6 (22.03.2017 - rev489)
+	core:
+FIXED: round trip time measurement
+ADDED: PhotonPeer.getLastRtt()
+	loadbalancing:
+ADDED: LoadBalancingClient.lastRtt() 
+ADDED: Plugins room parameter (code 204)
+	scirra:
+ADDED: 'kr' and 'in' in regions list
+FIXED: region EU -> eu in default Photon object properties and demo-test
+FIXED: app stats, lobby stats, friend info objects fields dereferenced via ["..."], otherwise minifying during export breaks them
+FIXED: chat applications minified export
+
+*** Version 4-0-0-5 (08.12.2016 - rev483)
+	loadbalancing:
+FIXED: client did not disconnect from game server after Leave operation
+FIXED: custom and well-known properties retrieval from properties update event
+ADDED: client myRoomMasterActorNr() method returning lowest actor nr in room or masterClientId received from server (if available)
+	scirra:
+ADDED: 'MasterActorNr' expression
+ADDED: usw, sa, cae regions to dropdown menu 
+CHANGED: (BREAKING) existing regions dropdown menu lowercased (reset menu selection in ui after update)
+FIXED: options objects literals keys replaced with strings to avoid replacement during export to HTML5
+
+*** Version 4-0-0-4 (07.07.2016 - rev477)
+	core:
+FIXED: Sec-WebSocket-Protocol header was not set that caused connection failure for some WebSocket realizations
+
+*** Version 4-0-0-3 (29.06.2016 - rev475)
+	chat:
+ADDED: photon-chat plugin and demo
+	core:
+ADDED: joinRandomRoom matchmaking options (mode, lobby parameters, optional usage of max players and properties of local room)
+ADDED: joinRoom rejoin actorNr, createIfNotExists and lobby parameters (current room properties used for create operation)
+ADDED: createRoom lobby parameters 
+ADDED: setPropsListedInLobby action
+ADDED: RoomProperty expression (for getting property of room in lobby)
+ADDED: LogLevel setting in Photon object
+ADDED: webRpc, findFriends, requestLobbyStats actions and conditions
+ADDED: onAppStats condition
+ADDED: isConnectedToMaster, isInLobby, isJoinedToRoom conditions
+ADDED: setRegion action
+ADDED: room and actor setProperty: WebForward and CheckAndSwap/ExpectedValue parameters
+
+*** Version 4-0-0-1 (02.06.2016 - rev468)
+ADDED: AU region
+FIXED: Client switched to erroneous state after leaving a room
+
+*** Version 4-0-0-0
+ADDED: Initial version
