@@ -10,6 +10,9 @@
 ![rex_rainbow](https://github.com/rexrainbow)
 ![rex_rainbow](https://img.shields.io/github/followers/rexrainbow?style=social)
 
+![releed](https://github.com/releed)
+![releed](https://img.shields.io/github/followers/releed?style=social)
+
 ## 文档
 
 [rex插件文档](http://c2rexplugins.weebly.com/)  
