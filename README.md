@@ -24,6 +24,7 @@
 ### 已翻译插件
 ##### audio helper
 ##### 9-patch
+<hr>
 
 ### 弃用插件
 
@@ -33,10 +34,16 @@
 ##### arcade
 ##### arcadev4
 ##### armaldio_electron
-c2-translate
-facebook
+##### c2-translate
+##### facebook
+<hr>
 
+### 其他说明
 
+##### !开头的为无法正常使用的
+##### @开头的为已汉化的
+<hr>  
 
-2021年4月4日
-2021年8月4日
+### 更新时间
+##### 2021年4月4日
+##### 2021年8月4日
